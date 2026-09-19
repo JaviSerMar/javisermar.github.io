@@ -26,9 +26,7 @@ function DesktopGrid({
         >
           <div className="desktop-item-content">
             <img
-              className={`desktop-item-icon ${
-                item.id === "cooking" ? "desktop-item-icon-cooking" : ""
-              }`}
+              className="desktop-item-icon"
               src={item.icon}
               alt=""
               draggable="false"

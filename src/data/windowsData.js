@@ -20,17 +20,19 @@ export const stickyNotesData = {
   },
 };
 
-export const documentWindowsData = {
+export const aboutWindowsData = {
   about: {
     id: "about-window",
     title: "sobre mi",
-    type: "document",
-    left: 300,
-    top: 120,
-    width: 760,
-    height: 430,
+    type: "about",
+    left: 250,
+    top: 35,
+    width: 1120,
+    height: 650,
   },
+};
 
+export const documentWindowsData = {
   "skills-file": {
     id: "skills-file-window",
     title: "habilidades.txt",

@@ -267,9 +267,7 @@ function DocumentWindow({
                       └── Figma`}</pre>
         )}
 
-        {window.id === "about-window" && (
-          <p>Contenido provisional del documento.</p>
-        )}
+        
 
         {window.id === "email-file-window" && (
           <div className="email-document-content">

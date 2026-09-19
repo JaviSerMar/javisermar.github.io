@@ -27,9 +27,17 @@ export const initialDesktopItems = [
     id: "about",
     type: "file",
     label: "sobre mi",
-    icon: "/icons/archivoTxt.png",
+    icon: "/images/sobreMi.png",
     x: 0,
     y: 3,
+  },
+  {
+    id: "digital-wardrobe",
+    type: "app",
+    label: "digital_wardrobe",
+    icon: "/icons/iconoDigitalWardrobe.png",
+    x: 1,
+    y: 4,
   },
   {
     id: "terminal",

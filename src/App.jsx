@@ -8,11 +8,11 @@ import DocumentWindow from "./components/DocumentWindow";
 import FolderWindow from "./components/FolderWindow";
 import GalleryViewer from "./components/GalleryViewer";
 import ImageViewer from "./components/ImageViewer";
-import ImageWidget from "./components/ImageWidget";
 import ReleaseToast from "./components/ReleaseToast";
 import StickyWindow from "./components/StickyWindow";
 import TerminalWindow from "./components/TerminalWindow";
 import Topbar from "./components/Topbar";
+import AboutWindow from "./components/AboutWindow";
 
 import { initialDesktopItems } from "./data/desktopItems";
 import {
@@ -21,6 +21,7 @@ import {
 } from "./data/projectFolders";
 
 import {
+  aboutWindowsData,
   documentWindowsData,
   folderWindowsData,
   stickyNotesData,
@@ -108,6 +109,7 @@ function App() {
     Object.fromEntries(
       [
         ...Object.values(stickyNotesData),
+        ...Object.values(aboutWindowsData),
         ...Object.values(documentWindowsData),
         ...Object.values(terminalWindowsData),
         ...Object.values(folderWindowsData),
@@ -219,12 +221,14 @@ function App() {
   }
 
   function handleItemDoubleClick(item) {
+    const aboutData = aboutWindowsData[item.id];
     const noteData = stickyNotesData[item.id];
     const documentData = documentWindowsData[item.id];
     const terminalData = terminalWindowsData[item.id];
     const folderData = folderWindowsData[item.id];
 
     const windowData =
+      aboutData ||
       noteData ||
       documentData ||
       terminalData ||
@@ -662,8 +666,6 @@ function App() {
         setDraggedItemId={setDraggedItemId}
       />
 
-      <ImageWidget />
-
       <DockBar isVisible={isDockVisible} />
 
       {isImageViewerOpen && (
@@ -690,17 +692,19 @@ function App() {
           <article
             key={window.id}
             className={`floating-window ${
-              window.type === "document"
-                ? "document-window"
-                : window.type === "terminal"
-                  ? "terminal-window"
-                  : window.type === "folder-window"
-                    ? "folder-window"
-                    : window.type === "app"
-                      ? "app-window"
-                      : window.type === "gallery"
-                        ? "gallery-window"
-                        : `sticky-window sticky-window-${window.type}`
+              window.type === "about"
+                ? "about-window"
+                : window.type === "document"
+                  ? "document-window"
+                  : window.type === "terminal"
+                    ? "terminal-window"
+                    : window.type === "folder-window"
+                      ? "folder-window"
+                      : window.type === "app"
+                        ? "app-window"
+                        : window.type === "gallery"
+                          ? "gallery-window"
+                          : `sticky-window sticky-window-${window.type}`
             }`}
             onPointerDown={(event) =>
               handleWindowPointerDown(event, window.id)
@@ -719,6 +723,13 @@ function App() {
             {(window.type === "welcome" ||
               window.type === "profile") && (
               <StickyWindow
+                window={window}
+                closeWindow={closeWindow}
+              />
+            )}
+
+            {window.type === "about" && (
+              <AboutWindow
                 window={window}
                 closeWindow={closeWindow}
               />
