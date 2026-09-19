@@ -13,6 +13,7 @@ import StickyWindow from "./components/StickyWindow";
 import TerminalWindow from "./components/TerminalWindow";
 import Topbar from "./components/Topbar";
 import AboutWindow from "./components/AboutWindow";
+import WelcomeGuide from "./components/WelcomeGuide";
 
 import { initialDesktopItems } from "./data/desktopItems";
 import {
@@ -78,6 +79,8 @@ function App() {
     }))
   );
 
+  const [isWelcomeGuideOpen, setIsWelcomeGuideOpen] = useState(true);
+
   const [draggingWindow, setDraggingWindow] = useState(null);
 
   const [currentDate, setCurrentDate] = useState(() => new Date());
@@ -134,7 +137,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (!isReleaseToastVisible) {
+    if (!isReleaseToastVisible || isWelcomeGuideOpen) {
       return undefined;
     }
 
@@ -145,7 +148,7 @@ function App() {
     return () => {
       window.clearTimeout(timeoutId);
     };
-  }, [isReleaseToastVisible]);
+  }, [isReleaseToastVisible, isWelcomeGuideOpen]);
 
   useEffect(() => {
     localStorage.setItem(
@@ -221,6 +224,11 @@ function App() {
   }
 
   function handleItemDoubleClick(item) {
+    if (item.id === "welcome-guide") {
+      setIsWelcomeGuideOpen(true);
+      return;
+    }
+
     const aboutData = aboutWindowsData[item.id];
     const noteData = stickyNotesData[item.id];
     const documentData = documentWindowsData[item.id];
@@ -677,7 +685,13 @@ function App() {
         />
       )}
 
-      {isReleaseToastVisible && (
+      {isWelcomeGuideOpen && (
+        <WelcomeGuide
+          onClose={() => setIsWelcomeGuideOpen(false)}
+        />
+      )}
+
+      {isReleaseToastVisible && !isWelcomeGuideOpen && (
         <ReleaseToast
           onOpenProject={openVelarisFromToast}
           onClose={() => setIsReleaseToastVisible(false)}

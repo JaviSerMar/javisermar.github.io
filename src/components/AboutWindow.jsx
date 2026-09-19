@@ -57,10 +57,9 @@ function AboutWindow({ window, closeWindow }) {
             <h1>JAVIER SERRANO</h1>
 
             <p>
-              Graduado en Tecnologías Interactivas.
-              Construyo proyectos donde el código conecta con
-              aplicaciones, dispositivos, sensores y sistemas
-              de visión por computación.
+              Graduado en Tecnologías Interactivas. Trabajo entre
+              programación, electrónica e interacción, desarrollando
+              soluciones que conectan software y sistemas físicos.
             </p>
           </div>
         </div>
@@ -71,24 +70,31 @@ function AboutWindow({ window, closeWindow }) {
 
         <div className="about-info-cell">
           <span className="about-info-title">
-            ACTUALMENTE
+            QUÉ HAGO
           </span>
 
           <p>
-            Buscando nuevas oportunidades para seguir
-            construyendo ideas.
+            Convierto ideas en prototipos y sistemas funcionales,
+            desde la interfaz y la lógica del software hasta su
+            integración con dispositivos y sensores.
           </p>
         </div>
 
-        <div className="about-info-cell about-profile-description">
+        <div className="about-info-cell about-areas">
           <span className="about-info-title">
-            PERFIL
+            ÁREAS
           </span>
 
           <p>
-            Desarrollo de software interactivo con enfoque
-            en IoT, sistemas embebidos y visión por
-            computador.
+            Desarrollo de software
+            <br />
+            IoT
+            <br />
+            Robótica
+            <br />
+            Automatización
+            <br />
+            Visión artificial
           </p>
 
           <img
@@ -105,30 +111,20 @@ function AboutWindow({ window, closeWindow }) {
           </span>
 
           <p>
-            Desarrollo de software
-            <br />
-            Sistemas interactivos
-            <br />
-            IoT y sistemas embebidos
-            <br />
-            Visión por computador
-            <br />
-            Robótica
+            Entender cómo funcionan las cosas, desmontarlas mentalmente
+            y encontrar una forma mejor de hacerlas.
           </p>
         </div>
 
-        <div className="about-motto-cell">
-          <p>
-            MISMAS
-            <br />
-            IDEAS
-            <br />
-            DISTINTOS
-            <br />
-            MEDIOS
-          </p>
+        <div className="about-info-cell about-current">
+          <span className="about-info-title">
+            ACTUALMENTE
+          </span>
 
-          <span>■</span>
+          <p>
+            Actualmente realizo prácticas en Grupo Ubesol como auxiliar
+            de sistemas.
+          </p>
         </div>
       </section>
 
@@ -153,141 +149,102 @@ function AboutWindow({ window, closeWindow }) {
       </section>
 
       <section className="about-bottom-grid">
-        <div className="about-signature-block">
-          <strong>
-            JAVIER
-            <br />
-            SERRANO
-          </strong>
-
-          <div className="about-signature-pattern">
-            × × ×
-            <br />
-            × × ×
-          </div>
-
-          <span>2026</span>
-        </div>
-
-        <div className="about-development-block">
-          <div className="about-development-art">
-            <img
-              src="/images/iconoAbout4.png"
-              alt=""
-              draggable="false"
-            />
-          </div>
-
-          <p>
-            IDEAS
-            <br />
-            EN DESARROLLO
-          </p>
-        </div>
-
-        <div className="about-links-block">
-          <a
-            href="mailto:javiersemarco@gmail.com"
-            onPointerDown={(event) => event.stopPropagation()}
-          >
-            <span>EMAIL</span>
-            <span>↗</span>
-          </a>
-
-          <a
-            href="https://github.com/JaviSerMar"
-            target="_blank"
-            rel="noreferrer"
-            onPointerDown={(event) => event.stopPropagation()}
-          >
-            <span>GITHUB</span>
-            <span>↗</span>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/javier-serrano-marco-800167409/"
-            target="_blank"
-            rel="noreferrer"
-            onPointerDown={(event) => event.stopPropagation()}
-          >
-            <span>LINKEDIN</span>
-            <span>↗</span>
-          </a>
-
-          <div className="about-link-static">
-            <span>CV</span>
-            <span>↗</span>
-          </div>
-        </div>
-
-        <div className="about-projects-block">
-          <span className="about-bottom-title">
-            PROYECTOS DESTACADOS
+        <div className="about-work-block">
+          <span className="about-bottom-heading">
+            EN QUÉ TRABAJO
           </span>
 
-          <div className="about-projects-row">
-            <div className="about-project-card">
-              <div className="about-project-image">
-                <img
-                  src="/projects/velaris/foto1Velaris.png"
-                  alt="Velaris"
-                  draggable="false"
-                />
-              </div>
-
-              <div className="about-project-copy">
-                <strong>VELARIS</strong>
-
-                <p>
-                  Robot de vigilancia móvil con visión
-                  artificial y control web.
-                </p>
-
-                <span>→</span>
-              </div>
+          <div className="about-work-diagram">
+            <div className="about-work-labels">
+              <span>AUTOMATIZAR</span>
+              <span>CONECTAR</span>
+              <span>PROTOTIPAR</span>
+              <span>OPTIMIZAR</span>
             </div>
 
-            <div className="about-project-card">
-              <div className="about-project-image about-project-dw">
-                <img
-                  src="/icons/iconoDigitalWardrobe.png"
-                  alt="Digital Wardrobe"
-                  draggable="false"
-                />
-              </div>
+            <svg
+              className="about-work-lines"
+              viewBox="0 0 190 92"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path d="M0 10 H92 C125 10 132 42 178 46" />
+              <path d="M0 34 H96 C127 34 139 44 178 46" />
+              <path d="M0 58 H96 C127 58 139 48 178 46" />
+              <path d="M0 82 H92 C125 82 132 50 178 46" />
 
-              <div className="about-project-copy">
-                <strong>ARMARIO DIGITAL</strong>
-
-                <p>
-                  Aplicación web para gestionar un armario
-                  digital de forma inteligente.
-                </p>
-
-                <span>→</span>
-              </div>
-            </div>
+              <circle cx="181" cy="46" r="6" />
+            </svg>
           </div>
         </div>
 
-        <div className="about-technology-block">
+        <div className="about-footer-image about-footer-image-red">
           <img
-            src="/images/iconoAbout4.png"
+            src="/images/imagenAbout5.png"
             alt=""
             draggable="false"
           />
+        </div>
 
-          <p>
-            TECNOLOGÍA
-            <br />
-            PARA
-            <br />
-            PERSONAS
-            <br />
-            REALES
-          </p>
+        <div className="about-contact-block">
+          <span className="about-bottom-heading">
+            CONTACTO
+          </span>
 
-          <span>■</span>
+          <div className="about-contact-list">
+            <a
+              href="mailto:javiersemarco@gmail.com"
+              onPointerDown={(event) => event.stopPropagation()}
+            >
+              <span className="about-contact-number">01</span>
+              <span className="about-contact-label">EMAIL</span>
+              <span className="about-contact-arrow">↗</span>
+            </a>
+
+            <a
+              href="https://github.com/JaviSerMar"
+              target="_blank"
+              rel="noreferrer"
+              onPointerDown={(event) => event.stopPropagation()}
+            >
+              <span className="about-contact-number">02</span>
+              <span className="about-contact-label">GITHUB</span>
+              <span className="about-contact-arrow">↗</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/javier-serrano-marco-800167409/"
+              target="_blank"
+              rel="noreferrer"
+              onPointerDown={(event) => event.stopPropagation()}
+            >
+              <span className="about-contact-number">03</span>
+              <span className="about-contact-label">LINKEDIN</span>
+              <span className="about-contact-arrow">↗</span>
+            </a>
+
+            <div className="about-contact-cv">
+              <span className="about-contact-number">04</span>
+              <span className="about-contact-label">CV</span>
+              <span className="about-contact-arrow">↓</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="about-footer-image about-footer-image-blue">
+          <img
+            src="/images/imagenAbout7.png"
+            alt=""
+            draggable="false"
+          />
+        </div>
+
+        <div className="about-footer-image about-footer-image-yellow">
+          <img
+            src="/images/imagenAbout8.png"
+            alt=""
+            draggable="false"
+          />
         </div>
       </section>
 

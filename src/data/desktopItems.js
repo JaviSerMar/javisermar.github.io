@@ -27,7 +27,7 @@ export const initialDesktopItems = [
     id: "about",
     type: "file",
     label: "sobre mi",
-    icon: "/images/sobreMi.png",
+    icon: "/images/iconoSobreMi.png",
     x: 0,
     y: 3,
   },
@@ -58,7 +58,7 @@ export const initialDesktopItems = [
   {
     id: "welcome-note",
     type: "note",
-    label: "bienvenida",
+    label: "nota",
     icon: "/icons/stickyNote.png",
     x: 8,
     y: 2,
@@ -66,7 +66,7 @@ export const initialDesktopItems = [
   {
     id: "profile-note",
     type: "note",
-    label: "profile.js",
+    label: "nota2",
     icon: "/icons/stickyNote.png",
     x: 9,
     y: 2,
@@ -78,5 +78,13 @@ export const initialDesktopItems = [
     icon: "/icons/iconoFoto.png",
     x: 0,
     y: 4,
+  },
+  {
+    id: "welcome-guide",
+    type: "app",
+    label: "bienvenido",
+    icon: "/images/sobreMi.png",
+    x: 13,
+    y: 5,
   },
 ];
